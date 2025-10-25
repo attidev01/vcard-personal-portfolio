@@ -1,26 +1,19 @@
-vCard - Personal Portfolio
 
-# sidebar
+### # Sidebar
 
-alt = Richard hanrick
-Richard hanrick
-Web developer
+**alt:** Lahcen Atti
+**Name:** Lahcen Atti
+**Title:** Embedded Software Engineer
 
-Show Contacts
+**Show Contacts**
 
-Email
-richard@example.com
+* **Email:** [atti.lahcen@gmail.com](mailto:atti.lahcen@gmail.com)
+* **Phone:** +212 653708610
+* **Location:** Meknès, Morocco
 
-Phone
-+1 (213) 352-2795
+---
 
-Birthday
-June 23, 1982
-
-Location
-Sacramento, California, USA
-
-# navbar
+### # Navbar
 
 About
 Resume
@@ -28,213 +21,168 @@ Portfolio
 Blog
 Contact
 
-# about
+---
 
-About me
+### # About
 
-I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media. I enjoy turning complex problems into simple, beautiful and intuitive designs.
+#### About Me
 
-My job is to build your website so that it is functional and user-friendly but at the same time attractive. Moreover, I add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring across your message and identity in the most creative way. I created web design for many famous brand companies.
+I am an Embedded Systems Engineer with experience working with STM32, ESP, AVR Atmel, and other microcontrollers.
+My focus is on developing embedded systems and simple DSP algorithms for various applications.
+I have solid experience in C and C++ programming and enjoy exploring new methods to improve system performance.
 
-
-## service
-
-What i'm doing
-
-alt = design icon
-Web design
-The most modern and high-quality design made at a professional level.
-
-alt = Web development icon
-Web development
-High-quality development of sites at the professional level.
-
-alt = mobile app icon
-Mobile apps
-Professional development of applications for iOS and Android.
-
-alt = camera icon
-Photography
-I make high-quality photos of any category at a professional level.
+I aim to create reliable, efficient, and optimized solutions while collaborating with teams to bring ideas to life.
+My goal is to keep growing and contribute to meaningful projects in the embedded systems and AI fields.
 
 
-## testimonials
+### ## Services
 
-Testimonials
+#### What I'm Doing
 
-alt = Daniel lewis
-Daniel lewis
-Richard was hired to create a corporate identity. We were very pleased with the work done. She has a lot of experience and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt consectetur adipiscing elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+**alt = embedded icon**
+**Embedded Systems**
+Design and implementation of efficient and reliable embedded systems using STM32, ESP32, and AVR platforms.
 
-alt = Jessica miller
-Jessica miller
-Richard was hired to create a corporate identity. We were very pleased with the work done. She has a lot of experience and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt consectetur adipiscing elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+**alt = iot icon**
+**IoT Solutions**
+Building connected IoT systems with optimized communication protocols and real-time data management.
 
-alt = Emily evans
-Emily evans
-Richard was hired to create a corporate identity. We were very pleased with the work done. She has a lot of experience and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt consectetur adipiscing elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+**alt = fpga icon**
+**FPGA Design**
+Development and simulation of digital systems using VHDL and Verilog for high-performance embedded applications.
 
-alt = Henry william
-Henry william
-Richard was hired to create a corporate identity. We were very pleased with the work done. She has a lot of experience and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt consectetur adipiscing elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-
-
-## clients
-
-Clients
-
-alt = client logo
+**alt = ai icon**
+**TinyML**
+Integrating lightweight machine learning models into embedded devices for intelligent and autonomous systems.
 
 
+### # Resume
 
-# resume
+#### Education
 
-Resume
+**National School of Applied Sciences (ENSA), Meknès**
+2018 — 2023
+Master’s degree in Embedded Systems and Artificial Intelligence. Focus on hardware-software co-design, DSP, and FPGA-based architectures.
 
-Education
+**Preparatory Classes for Engineering Schools (CPGE)**
+2016 — 2018
+Mathematics and Physics specialization — strong foundation in algorithms, electronics, and control systems.
 
-University school of the arts
-2007 — 2008
-Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et quas molestias exceptur.
+---
 
-New york academy of art
-2006 — 2007
-Ratione voluptatem sequi nesciunt, facere quisquams facere menda ossimus, omnis voluptas assumenda est omnis..
+#### Experience
 
-High school of art and design
-2002 — 2004
-Duis aute irure dolor in reprehenderit in voluptate, quila voluptas mag odit aut fugit, sed consequuntur magni dolores eos.
+**Embedded Systems Engineer (Freelance)**
+2023 — Present
+Worked on STM32 and ESP32-based projects involving data acquisition, wireless communication, and real-time processing. Developed C/C++ drivers and optimized firmware performance.
 
-Experience
+**Intern — Embedded Software Developer, Industry Project**
+2022
+Implemented a digital signal processing algorithm for ECG filtering using STM32 and verified timing with logic analyzers.
 
-Creative director
-2015 — Present
-Nemo enim ipsam voluptatem blanditiis praesentium voluptum delenit atque corrupti, quos dolores et qvuas molestias exceptur.
+**AI & FPGA Research Project**
+2021
+Developed and simulated a TinyML model for ECG signal classification using Xilinx tools and Python-based preprocessing.
 
-Art director
-2013 — 2015
-Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et quas molestias exceptur.
+---
 
-Web designer
-2010 — 2013
-Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et quas molestias exceptur.
+#### My Skills
 
-My skills
+C/C++ — 90%
+Python — 80%
+VHDL & Verilog — 75%
+Linux Systems — 70%
+IoT Protocols (MQTT, HTTP, BLE) — 70%
+Embedded AI / TinyML — 65%
 
-Web design
-80%
-Graphic design
-70%
-Branding
-90%
-WordPress
-50%
+---
 
+### # Portfolio
 
+#### Portfolio
 
-# portfolio
+**All**
+Embedded Systems
+IoT
+FPGA
+TinyML
 
-Portfolio
-
+**Select Category**
 All
-Web design
-Applications
-Web development
+Embedded Systems
+IoT
+FPGA
+TinyML
 
-Select category
-All
-Web design
-Applications
-Web development
+---
 
-alt = finance
-Finance
-Web development
+**alt = stm32 driver project**
+**GPIO Driver for STM32F103**
+Embedded Systems
+Low-level driver design for GPIOs using C and CMSIS on STM32 microcontroller.
 
-alt = orizon
-Orizon
-Web development
+**alt = iot energy monitor**
+**IoT Energy Monitor**
+IoT
+Designed a smart energy monitoring system with ESP32 and MQTT communication.
 
-alt = fundo
-Fundo
-Web design
+**alt = fpga dsp project**
+**FPGA DSP Filter**
+FPGA
+Developed and verified a digital filter on Xilinx FPGA for ECG signal preprocessing.
 
-alt = brawlhalla
-Brawlhalla
-Applications
+**alt = tinyml ecg classifier**
+**TinyML ECG Classifier**
+TinyML
+Implemented a lightweight neural network on microcontroller for ECG signal classification.
 
-alt = dsm.
-DSM.
-Web design
+**alt = embedded dashboard**
+**Embedded Monitoring Dashboard**
+Web + Embedded
+Real-time sensor data visualization integrated with embedded device output.
 
-alt = metaspark
-MetaSpark
-Web design
+---
 
-alt = summary
-Summary
-Web development
+### # Blog
 
-alt = task manager
-Task Manager
-Applications
+#### Blog
 
-alt = arrival
-Arrival
-Web development
+**alt = TinyML for Embedded Devices**
+**Embedded AI**
+July 12, 2024
+**TinyML for Embedded Devices**
+Exploring how lightweight neural networks can run efficiently on constrained microcontrollers.
 
+**alt = Optimizing C Code for STM32**
+**Embedded Systems**
+September 8, 2024
+**Optimizing C Code for STM32**
+Practical tips to improve performance and memory usage in embedded firmware.
 
+**alt = FPGA vs MCU for Real-Time Processing**
+**Hardware Design**
+June 2, 2024
+**FPGA vs MCU for Real-Time Processing**
+Comparison of FPGAs and microcontrollers for real-time DSP and AI workloads.
 
-# blog
+---
 
-Blog
+### # Contact
 
-alt = Design conferences in 2022
-Design
-Fab 23, 2022
-Design conferences in 2022
-Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
+#### Contact Form
 
-alt = Best fonts every designer
-Design
-Fab 23, 2022
-Best fonts every designer
-Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
+**Full Name**
+**Email Address**
+**Your Message**
 
-alt = Design digest #80
-Design
-Fab 23, 2022
-Design digest #80
-Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
+**Send Message**
 
-alt = UI interactions of the week
-Design
-Fab 23, 2022
-UI interactions of the week
-Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
+---
 
-alt = The forgotten art of spacing
-Design
-Fab 23, 2022
-The Forgotten Art Of Spacing
-Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+### 📬 Contact Info
 
-alt = Design digest #79
-Design
-Fab 23, 2022
-Design Digest #79
-Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
+* **Email:** [atti.lahcen@gmail.com](mailto:atti.lahcen@gmail.com)
+* **Phone:** +212 653708610
+* **Location:** Meknès, Morocco
 
 
-
-# contact
-
-Contact
-
-Contact Form
-
-Full name
-Email address
-Your Message
-
-Send Message
