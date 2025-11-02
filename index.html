@@ -23,6 +23,144 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 1000;
+      overflow-y: auto;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .modal-content {
+      background-color: var(--bg-color);
+      margin: 5% auto;
+      padding: 30px;
+      border-radius: 16px;
+      max-width: 800px;
+      width: 90%;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      animation: modalFadeIn 0.3s ease;
+    }
+
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      color: var(--text-color);
+      transition: color 0.3s ease;
+    }
+
+    .close-btn:hover {
+      color: var(--primary-color);
+    }
+
+    .modal-header {
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 15px;
+    }
+
+    .modal-title {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: var(--heading-color);
+    }
+
+    .modal-category {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .modal-image {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      max-height: 400px;
+      object-fit: cover;
+    }
+
+    .modal-body {
+      line-height: 1.6;
+    }
+
+    .modal-body h4 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      color: var(--heading-color);
+    }
+
+    .modal-body p {
+      margin-bottom: 15px;
+    }
+
+    .modal-body ul {
+      padding-left: 20px;
+      margin-bottom: 15px;
+    }
+
+    .modal-body li {
+      margin-bottom: 8px;
+    }
+
+    .modal-footer {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-color);
+      padding-top: 15px;
+    }
+
+    .modal-links a {
+      display: inline-block;
+      margin-right: 15px;
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .modal-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .modal-content {
+        padding: 20px;
+        margin: 10% auto;
+      }
+      
+      .modal-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -558,7 +696,7 @@
           <ul class="project-list">
 
             <li class="project-item  active" data-filter-item data-category="embedded systems">
-              <a href="#">
+              <a href="#" class="project-link" data-project="gpio-driver">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -576,7 +714,7 @@
             </li>
 
             <li class="project-item  active" data-filter-item data-category="iot">
-              <a href="#">
+              <a href="#" class="project-link" data-project="iot-energy-monitor">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -594,7 +732,7 @@
             </li>
 
             <li class="project-item  active" data-filter-item data-category="fpga">
-              <a href="#">
+              <a href="#" class="project-link" data-project="fpga-dsp-filter">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -612,7 +750,7 @@
             </li>
 
             <li class="project-item  active" data-filter-item data-category="tinyml">
-              <a href="#">
+              <a href="#" class="project-link" data-project="tinyml-ecg-classifier">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -650,7 +788,7 @@
           <ul class="blog-posts-list">
 
             <li class="blog-post-item">
-              <a href="#">
+              <a href="#" class="blog-link" data-blog="tinyml-embedded">
 
                 <figure class="blog-banner-box">
                   <img src="./assets/images/emb1.png" alt="TinyML for Embedded Devices" loading="lazy">
@@ -678,7 +816,7 @@
             </li>
 
             <li class="blog-post-item">
-              <a href="#">
+              <a href="#" class="blog-link" data-blog="optimizing-c-code">
 
                 <figure class="blog-banner-box">
                   <img src="./assets/images/emb1.png" alt="Optimizing C Code for STM32" loading="lazy">
@@ -706,7 +844,7 @@
             </li>
 
             <li class="blog-post-item">
-              <a href="#">
+              <a href="#" class="blog-link" data-blog="fpga-vs-mcu">
 
                 <figure class="blog-banner-box">
                   <img src="./assets/images/emb1.png" alt="FPGA vs MCU for Real-Time Processing" loading="lazy">
@@ -786,6 +924,52 @@
 
   </main>
 
+  <!-- Project Detail Modals -->
+  <div id="project-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <div class="modal-header">
+        <h2 class="modal-title">Project Title</h2>
+        <span class="modal-category">Category</span>
+      </div>
+      <img src="./assets/images/emb1.png" alt="Project Image" class="modal-image">
+      <div class="modal-body">
+        <!-- Content will be dynamically inserted here -->
+      </div>
+      <div class="modal-footer">
+        <div class="modal-date">Date: <span id="modal-date"></span></div>
+        <div class="modal-links">
+          <a href="#" id="github-link" target="_blank">GitHub</a>
+          <a href="#" id="demo-link" target="_blank">Live Demo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blog Detail Modal -->
+  <div id="blog-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <div class="modal-header">
+        <h2 class="modal-title">Blog Title</h2>
+        <div class="blog-meta">
+          <p class="modal-category">Category</p>
+          <span class="dot"></span>
+          <time id="blog-date" datetime="">Date</time>
+        </div>
+      </div>
+      <img src="./assets/images/emb1.png" alt="Blog Image" class="modal-image">
+      <div class="modal-body">
+        <!-- Content will be dynamically inserted here -->
+      </div>
+      <div class="modal-footer">
+        <div class="modal-links">
+          <a href="#" id="read-full-link" target="_blank">Read Full Article</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!--
     - custom js link
   -->
@@ -796,6 +980,443 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script>
+    // Project data
+    const projects = {
+      'gpio-driver': {
+        title: 'GPIO Driver for STM32F103',
+        category: 'Embedded Systems',
+        image: './assets/images/emb1.png',
+        date: 'March 2023',
+        description: `
+          <p>A comprehensive GPIO driver implementation for the STM32F103 microcontroller, providing a robust and efficient interface for general-purpose input/output operations.</p>
+          
+          <h4>Key Features</h4>
+          <ul>
+            <li>Support for all GPIO modes: Input, Output, Analog, Alternate Function</li>
+            <li>Configurable pull-up/pull-down resistors</li>
+            <li>Atomic operations for thread-safe access</li>
+            <li>Comprehensive error handling and validation</li>
+            <li>Optimized for performance with minimal overhead</li>
+          </ul>
+          
+          <h4>Technical Details</h4>
+          <p>The driver implements a layered architecture with hardware abstraction, making it portable across different STM32 families. It includes:</p>
+          <ul>
+            <li>Register-level configuration for maximum control</li>
+            <li>Interrupt handling for input pins</li>
+            <li>Support for all STM32F103 GPIO ports (A-G)</li>
+            <li>Comprehensive documentation and usage examples</li>
+          </ul>
+          
+          <h4>Results</h4>
+          <p>This driver has been successfully integrated into multiple production projects, reducing development time by 40% and improving code reliability through standardized GPIO access patterns.</p>
+        `,
+        github: 'https://github.com/lahcen/stm32-gpio-driver',
+        demo: null
+      },
+      'iot-energy-monitor': {
+        title: 'IoT Energy Monitor',
+        category: 'IoT',
+        image: './assets/images/emb1.png',
+        date: 'June 2023',
+        description: `
+          <p>A smart energy monitoring system that tracks power consumption in real-time and provides insights through a web dashboard.</p>
+          
+          <h4>System Architecture</h4>
+          <ul>
+            <li>ESP32-based sensor nodes with current transformers</li>
+            <li>MQTT protocol for data transmission</li>
+            <li>Node.js backend for data processing and storage</li>
+            <li>React-based frontend for visualization</li>
+            <li>Real-time alerts for abnormal consumption patterns</li>
+          </ul>
+          
+          <h4>Key Features</h4>
+          <ul>
+            <li>Real-time power consumption monitoring</li>
+            <li>Historical data analysis and trends</li>
+            <li>Cost calculation based on utility rates</li>
+            <li>Mobile-responsive web interface</li>
+            <li>Energy-saving recommendations</li>
+          </ul>
+          
+          <h4>Technical Implementation</h4>
+          <p>The system uses calibrated current sensors to measure AC current with ±2% accuracy. Data is transmitted securely over Wi-Fi using TLS encryption. The backend processes over 10,000 data points per hour and provides actionable insights through machine learning algorithms.</p>
+        `,
+        github: 'https://github.com/lahcen/iot-energy-monitor',
+        demo: 'https://energy-demo.lahcen.dev'
+      },
+      'fpga-dsp-filter': {
+        title: 'FPGA DSP Filter',
+        category: 'FPGA',
+        image: './assets/images/emb1.png',
+        date: 'January 2024',
+        description: `
+          <p>A high-performance digital signal processing filter implemented on FPGA for real-time audio processing applications.</p>
+          
+          <h4>Filter Specifications</h4>
+          <ul>
+            <li>Finite Impulse Response (FIR) filter design</li>
+            <li>128-tap filter with 16-bit coefficients</li>
+            <li>Sample rate: 48 kHz</li>
+            <li>Cutoff frequency: 8 kHz</li>
+            <li>Implementation on Xilinx Artix-7 FPGA</li>
+          </ul>
+          
+          <h4>Architecture</h4>
+          <p>The filter uses a pipelined architecture with distributed arithmetic for efficient implementation. Key components include:</p>
+          <ul>
+            <li>Multiplier-accumulator (MAC) units</li>
+            <li>Circular buffer for sample storage</li>
+            <li>Control state machine</li>
+            <li>AXI4-Stream interface for data I/O</li>
+          </ul>
+          
+          <h4>Performance</h4>
+          <p>The implementation achieves a throughput of 48 million samples per second while using only 15% of the FPGA's DSP slices. The filter introduces less than 0.1% total harmonic distortion and has a signal-to-noise ratio of 95 dB.</p>
+        `,
+        github: 'https://github.com/lahcen/fpga-dsp-filter',
+        demo: null
+      },
+      'tinyml-ecg-classifier': {
+        title: 'TinyML ECG Classifier',
+        category: 'TinyML',
+        image: './assets/images/emb1.png',
+        date: 'August 2023',
+        description: `
+          <p>A machine learning model for electrocardiogram (ECG) signal classification that runs on resource-constrained microcontrollers.</p>
+          
+          <h4>Model Details</h4>
+          <ul>
+            <li>Lightweight convolutional neural network (CNN)</li>
+            <li>Input: 256-sample ECG segments</li>
+            <li>Output: 5 cardiac arrhythmia classes</li>
+            <li>Model size: 45 KB (quantized)</li>
+            <li>Inference time: 120 ms on ARM Cortex-M4</li>
+          </ul>
+          
+          <h4>Implementation</h4>
+          <p>The system processes raw ECG signals from sensors, extracts features using the trained model, and classifies them in real-time. Key aspects include:</p>
+          <ul>
+            <li>TensorFlow Lite Micro for inference</li>
+            <li>Custom preprocessing for signal normalization</li>
+            <li>Optimized for STM32L4 series microcontrollers</li>
+            <li>Battery-powered operation with 30-day lifespan</li>
+          </ul>
+          
+          <h4>Performance Metrics</h4>
+          <p>The classifier achieves 94.2% accuracy on the MIT-BIH Arrhythmia Database, with sensitivity of 92.8% and specificity of 95.1%. It can process ECG signals in real-time while consuming less than 5 mW of power.</p>
+        `,
+        github: 'https://github.com/lahcen/tinyml-ecg-classifier',
+        demo: null
+      }
+    };
+
+    // Blog data
+    const blogPosts = {
+      'tinyml-embedded': {
+        title: 'TinyML for Embedded Devices',
+        category: 'Embedded AI',
+        date: '2024-07-12',
+        image: './assets/images/emb1.png',
+        content: `
+          <p>Machine learning on microcontrollers, known as TinyML, is revolutionizing how we deploy intelligent applications on resource-constrained devices. This article explores the techniques and tools that make this possible.</p>
+          
+          <h4>Why TinyML Matters</h4>
+          <p>Traditional machine learning models require significant computational resources, making them unsuitable for battery-powered IoT devices. TinyML addresses this challenge by:</p>
+          <ul>
+            <li>Reducing model size through quantization and pruning</li>
+            <li>Optimizing inference for low-power processors</li>
+            <li>Enabling always-on AI with minimal energy consumption</li>
+          </ul>
+          
+          <h4>Key Technologies</h4>
+          <p>The TinyML ecosystem has matured significantly, with several key technologies driving adoption:</p>
+          <ul>
+            <li><strong>TensorFlow Lite Micro</strong>: Google's framework for ML on microcontrollers</li>
+            <li><strong>CMSIS-NN</strong>:
+            ARM's optimized neural network kernels for Cortex-M processors</li>
+            <li><strong>Edge Impulse</strong>: End-to-end platform for developing TinyML applications</li>
+            <li><strong>OpenMV</strong>: Platform for computer vision on embedded devices</li>
+          </ul>
+          
+          <h4>Real-World Applications</h4>
+          <p>TinyML is already powering innovative applications across industries:</p>
+          <ul>
+            <li><strong>Predictive Maintenance</strong>: Detecting equipment failures before they occur</li>
+            <li><strong>Keyword Spotting</strong>: Voice interfaces for smart devices</li>
+            <li><strong>Anomaly Detection</strong>: Identifying unusual patterns in sensor data</li>
+            <li><strong>Gesture Recognition</strong>: Controlling devices with hand movements</li>
+          </ul>
+          
+          <h4>Getting Started</h4>
+          <p>Beginning with TinyML is easier than ever. Start with:</p>
+          <ol>
+            <li>Choose a development board (Arduino Nano 33 BLE Sense, ESP32, or STM32)</li>
+            <li>Experiment with pre-trained models from TensorFlow Lite Micro examples</li>
+            <li>Use Edge Impulse to collect data and train custom models</li>
+            <li>Deploy your model and optimize for your specific hardware</li>
+          </ol>
+          
+          <p>The future of embedded intelligence is bright, with TinyML enabling a new generation of smart, efficient, and autonomous devices.</p>
+        `,
+        fullArticle: 'https://blog.lahcen.dev/tinyml-embedded-devices'
+      },
+      'optimizing-c-code': {
+        title: 'Optimizing C Code for STM32',
+        category: 'Embedded Systems',
+        date: '2024-09-08',
+        image: './assets/images/emb1.png',
+        content: `
+          <p>Writing efficient C code for STM32 microcontrollers requires understanding both the compiler and the hardware. This article shares practical optimization techniques I've learned through years of embedded development.</p>
+          
+          <h4>Compiler Optimization Flags</h4>
+          <p>The first step to optimization is using the right compiler flags. For GCC with STM32:</p>
+          <ul>
+            <li><code>-Os</code>: Optimize for size (usually the best choice)</li>
+            <li><code>-O2</code>: Good balance between speed and size</li>
+            <li><code>-O3</code>: Maximum optimization (use with caution)</li>
+            <li><code>-ffunction-sections -fdata-sections</code>: Enable linker garbage collection</li>
+          </ul>
+          
+          <h4>Memory Management</h4>
+          <p>Efficient memory usage is critical in resource-constrained environments:</p>
+          <ul>
+            <li>Use stack allocation for small, short-lived objects</li>
+            <li>Prefer static allocation over dynamic when possible</li>
+            <li>Place frequently accessed data in tightly coupled memory (TCM)</li>
+            <li>Use DMA for large data transfers to reduce CPU overhead</li>
+          </ul>
+          
+          <h4>Algorithm Optimization</h4>
+          <p>Sometimes the biggest gains come from algorithmic improvements:</p>
+          <ul>
+            <li>Replace floating-point operations with fixed-point arithmetic</li>
+            <li>Use lookup tables for complex calculations</li>
+            <li>Implement circular buffers for stream processing</li>
+            <li>Batch process data to reduce function call overhead</li>
+          </ul>
+          
+          <h4>Hardware-Specific Optimizations</h4>
+          <p>STM32 microcontrollers offer hardware features that can dramatically improve performance:</p>
+          <ul>
+            <li>Use the FPU for floating-point operations on supported devices</li>
+            <li>Leverage DMA controllers for peripheral communication</li>
+            <li>Enable instruction and data caches when available</li>
+            <li>Use hardware accelerators for cryptography and DSP</li>
+          </ul>
+          
+          <h4>Profiling and Measurement</h4>
+          <p>Optimization without measurement is guesswork. Essential tools include:</p>
+          <ul>
+            <li>Cycle counters for timing critical sections</li>
+            <li>Stack usage analysis to prevent overflow</li>
+            <li>Memory mapping to identify large objects</li>
+            <li>Logic analyzers for hardware timing verification</li>
+          </ul>
+          
+          <p>Remember: The best optimization is often the one you don't need to make. Write clear, maintainable code first, then optimize only the parts that profiling shows to be bottlenecks.</p>
+        `,
+        fullArticle: 'https://blog.lahcen.dev/optimizing-c-stm32'
+      },
+      'fpga-vs-mcu': {
+        title: 'FPGA vs MCU for Real-Time Processing',
+        category: 'Hardware Design',
+        date: '2024-06-02',
+        image: './assets/images/emb1.png',
+        content: `
+          <p>Choosing between FPGAs and microcontrollers for real-time processing applications involves trade-offs between flexibility, performance, and development complexity. This article compares both approaches.</p>
+          
+          <h4>Performance Characteristics</h4>
+          <table style="width:100%; border-collapse: collapse; margin: 20px 0;">
+            <thead>
+              <tr style="background-color: var(--border-color);">
+                <th style="padding: 10px; text-align: left; border: 1px solid var(--text-color);">Metric</th>
+                <th style="padding: 10px; text-align: left; border: 1px solid var(--text-color);">Microcontroller</th>
+                <th style="padding: 10px; text-align: left; border: 1px solid var(--text-color);">FPGA</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 10px; border: 1px solid var(--text-color);">Determinism</td>
+                <td style="padding: 10px; border: 1px solid var(--text-color);">Software-based, less deterministic</td>
+                <td style="padding: 10px; border: 1px solid var(--text-color);">Hardware-based, highly deterministic</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border: 1px solid var(--text-color);">Parallelism</td>
+                <td style="padding: 10px; border: 1px solid var(--text-color);">Limited by CPU cores</td>
+                <td style="padding: 10px; border: 1px solid var(--text-color);">Massive parallel processing</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border: 1px solid var(--text-color);">Development Time</td>
+                <td style="padding: 10px; border: 1px solid var(--text-color);">Shorter, more familiar tools</td>
+                <td style="padding: 10px; border: 1px solid var(--text-color);">Longer, specialized skills required</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border: 1px solid var(--text-color);">Power Consumption</td>
+                <td style="padding: 10px; border: 1px solid var(--text-color);">Generally lower</td>
+                <td style="padding: 10px; border: 1px solid var(--text-color);">Higher, especially at high utilization</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <h4>When to Choose Microcontrollers</h4>
+          <p>Microcontrollers are ideal for:</p>
+          <ul>
+            <li>Applications with moderate processing requirements</li>
+            <li>Projects with tight development schedules</li>
+            <li>Cost-sensitive designs</li>
+            <li>Systems requiring complex software stacks</li>
+            <li>Low-to-medium volume production</li>
+          </ul>
+          
+          <h4>When to Choose FPGAs</h4>
+          <p>FPGAs excel in:</p>
+          <ul>
+            <li>Ultra-low latency applications</li>
+            <li>Massive parallel processing tasks</li>
+            <li>High-throughput data processing</li>
+            <li>Prototyping ASIC designs</li>
+            <li>Applications requiring hardware flexibility</li>
+          </ul>
+          
+          <h4>Hybrid Approaches</h4>
+          <p>Many modern systems use both technologies:</p>
+          <ul>
+            <li>FPGA for high-speed data acquisition and preprocessing</li>
+            <li>Microcontroller for system control and communication</li>
+            <li>SoC FPGAs that combine both in a single package</li>
+          </ul>
+          
+          <p>The choice between FPGA and microcontroller isn't always clear-cut. Consider your performance requirements, development resources, and production volume when making this critical decision.</p>
+        `,
+        fullArticle: 'https://blog.lahcen.dev/fpga-vs-mcu-realtime'
+      }
+    };
+
+    // Modal functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const projectModal = document.getElementById('project-modal');
+      const blogModal = document.getElementById('blog-modal');
+      const closeButtons = document.querySelectorAll('.close-btn');
+      
+      // Project modal handlers
+      const projectLinks = document.querySelectorAll('.project-link');
+      projectLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const projectId = this.getAttribute('data-project');
+          openProjectModal(projectId);
+        });
+      });
+      
+      // Blog modal handlers
+      const blogLinks = document.querySelectorAll('.blog-link');
+      blogLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const blogId = this.getAttribute('data-blog');
+          openBlogModal(blogId);
+        });
+      });
+      
+      // Close modal when clicking close button
+      closeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          projectModal.style.display = 'none';
+          blogModal.style.display = 'none';
+        });
+      });
+      
+      // Close modal when clicking outside content
+      window.addEventListener('click', function(e) {
+        if (e.target === projectModal) {
+          projectModal.style.display = 'none';
+        }
+        if (e.target === blogModal) {
+          blogModal.style.display = 'none';
+        }
+      });
+      
+      // Close modal with Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          projectModal.style.display = 'none';
+          blogModal.style.display = 'none';
+        }
+      });
+    });
+    
+    function openProjectModal(projectId) {
+      const project = projects[projectId];
+      if (!project) return;
+      
+      const modal = document.getElementById('project-modal');
+      const title = modal.querySelector('.modal-title');
+      const category = modal.querySelector('.modal-category');
+      const image = modal.querySelector('.modal-image');
+      const body = modal.querySelector('.modal-body');
+      const date = document.getElementById('modal-date');
+      const githubLink = document.getElementById('github-link');
+      const demoLink = document.getElementById('demo-link');
+      
+      title.textContent = project.title;
+      category.textContent = project.category;
+      image.src = project.image;
+      image.alt = project.title;
+      body.innerHTML = project.description;
+      date.textContent = project.date;
+      
+      // Set GitHub link
+      if (project.github) {
+        githubLink.href = project.github;
+        githubLink.style.display = 'inline-block';
+      } else {
+        githubLink.style.display = 'none';
+      }
+      
+      // Set demo link
+      if (project.demo) {
+        demoLink.href = project.demo;
+        demoLink.style.display = 'inline-block';
+      } else {
+        demoLink.style.display = 'none';
+      }
+      
+      modal.style.display = 'block';
+    }
+    
+    function openBlogModal(blogId) {
+      const blog = blogPosts[blogId];
+      if (!blog) return;
+      
+      const modal = document.getElementById('blog-modal');
+      const title = modal.querySelector('.modal-title');
+      const category = modal.querySelector('.modal-category');
+      const blogDate = document.getElementById('blog-date');
+      const image = modal.querySelector('.modal-image');
+      const body = modal.querySelector('.modal-body');
+      const readFullLink = document.getElementById('read-full-link');
+      
+      title.textContent = blog.title;
+      category.textContent = blog.category;
+      blogDate.textContent = formatDate(blog.date);
+      blogDate.setAttribute('datetime', blog.date);
+      image.src = blog.image;
+      image.alt = blog.title;
+      body.innerHTML = blog.content;
+      readFullLink.href = blog.fullArticle;
+      
+      modal.style.display = 'block';
+    }
+    
+    function formatDate(dateString) {
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      return new Date(dateString).toLocaleDateString('en-US', options);
+    }
+  </script>
 
 </body>
 
