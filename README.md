@@ -21,7 +21,7 @@ sudo git clone https://github.com/codewithsadee/vcard-personal-portfolio.git
 
 Windows:
 
-```bash
+``` bash
 git clone https://github.com/codewithsadee/vcard-personal-portfolio.git
 ```
 ## License
